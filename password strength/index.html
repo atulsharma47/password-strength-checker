@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>password strength checking using html,css and javascipt</title>
+	
+	<link rel="stylesheet" type="text/css" href="style.css">
+	
+</head>
+<body>
+	<div class ="container">
+		<div class="inputbox">
+			<input type="password" id="password" placeholder="password">
+			<button type="submit"><img src="C:\Users\hp\Desktop\password strength/arrow1.png"></button>
+			<p id="message">Password is <span id="period"></span></p>
+		</div>
+</div>
+
+<script type="text/javascript">
+	
+	var pass=document.getElementById("password");
+	var msg=document.getElementById("message");
+var str=document.getElementById("period");
+
+pass.addEventListener('input',()=>{ if(pass.value.length>0){
+	msg.style.display="block";
+}
+else{
+	msg.style.display="none";
+}
+if(pass.value.length<4)
+{
+	str.innerHTML="weak";
+	pass.style.borderColor="#ff5925";
+	msg.style.color="#ff5925"
+}
+else if(pass.value.length>=4 && pass.value.length<8){
+	str.innerHTML="medium";
+	pass.style.borderColor="blue";
+	msg.style.color="blue"
+}
+else if(pass.value.length>=8)
+{
+	str.innerHTML="strong";
+	pass.style.borderColor="green";
+	msg.style.color="green"
+}
+})
+
+
+
+</script>
+</body>
+</html>
